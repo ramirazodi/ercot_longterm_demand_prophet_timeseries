@@ -40,6 +40,15 @@ df_future = (
 )
 
 #%%%
+# Instantiate and train the model on all available historical data prior to predicting the future
+model = Prophet(holidays_prior_scale=10.0).add_country_holidays(country_name='US')
+for regressor in ['hdh', 'cdh', 'ghi']:
+    model.add_regressor(regressor)
+for seasonality in [('hourly', 1/24, 3), ('daily', 1, 5), ('weekly', 7, 3), ('monthly', 30.5, 3)]:
+    model.add_seasonality(name=seasonality[0], period=seasonality[1],
+                          fourier_order=seasonality[2])
+model.fit(df[['ds', 'y', 'hdh', 'cdh', 'ghi']])
+
 # Use the trained Prophet model to make predictions on the future DataFrame
 df_future_forecast = model.predict(df_future)
 
