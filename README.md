@@ -1,3 +1,8 @@
+![longterm_demand_predictions_2023](https://github.com/ramirazodi/ercot_longterm_demand_prophet_timeseries/assets/106940649/9d86dc4f-fc8a-497b-9b0d-149b077aed13)
+![longterm_demand_predictions_2017](https://github.com/ramirazodi/ercot_longterm_demand_prophet_timeseries/assets/106940649/c51ceb31-9a85-481f-b8fd-3197bc7055da)
+![prophet_fit](https://github.com/ramirazodi/ercot_longterm_demand_prophet_timeseries/assets/106940649/8f9b37a0-b6ca-4335-ba81-ee188eebd18f)
+
+
 # ERCOT Long-Term Trend & Demand Forecasting Using Facebook's Prophet Model
 
 This project focuses on forecasting long-term electricity demand for ERCOT (Electric Reliability Council of Texas) using Facebook's Prophet time series forecasting tool. Electricity demand is generally highly correlated with weather, and most demand forecasting models—especially short-term ones—achieve high accuracy by predicting demand based on weather features. However, forecasting long-term electricity demand for rapidly growing grids like ERCOT, driven by electrification and economic growth, requires accurately modeling and decomposing the growth trend component. The ideal approach often involves decomposing the long-term demand into its trend and seasonal components, then utilizing a gradient boosting model that uses weather features to predict a stationary outlook of long-term demand, which is later adjusted to reflect the long-term trend.
