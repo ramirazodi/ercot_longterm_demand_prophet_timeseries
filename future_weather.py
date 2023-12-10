@@ -6,6 +6,7 @@ from read_data import df_data
 df_future_wx = (
     df_data
     .set_index('datetime')
+    .drop(columns=['date'])
     .loc['2022']
     .groupby(['month', 'day', 'hour_begin', 'hour_end'])
     .mean()

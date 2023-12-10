@@ -1,6 +1,7 @@
-pandas
-numpy
-matplotlib
-seaborn
-prophet
-scikit-learn
+pandas==2.1.4
+numpy==1.26.2
+seaborn==0.13.0
+matplotlib==3.8.2
+prophet==1.1.5
+scikit-learn==1.3.2
+
